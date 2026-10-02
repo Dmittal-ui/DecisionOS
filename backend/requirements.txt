@@ -33,3 +33,5 @@ httpx
 pytest
 pytest-asyncio
 mongomock-motor
+
+PyJWT==2.15.1
