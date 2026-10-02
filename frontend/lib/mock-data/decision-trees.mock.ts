@@ -1,0 +1,66 @@
+import { DecisionTree } from "@/types/decision-tree";
+
+export const MOCK_DECISION_TREE: DecisionTree = {
+  id: "tree_901",
+  title: "Mid-Market Enterprise Dynamic Tier Repricing Strategy",
+  decisionId: "dec_1",
+  rootNodeId: "node_root",
+  nodes: [
+    {
+      id: "node_root",
+      label: "Evaluate Pricing Strategy",
+      type: "root",
+      description: "Baseline revenue $18.2M with standard 5% annual inflation uplift.",
+      childrenNodeIds: ["node_opt_a", "node_opt_b", "node_opt_c"],
+    },
+    {
+      id: "node_opt_a",
+      label: "Option A: Aggressive +12% Repricing",
+      type: "decision_branch",
+      expectedPayoff: 2100000,
+      riskScore: 68,
+      probability: 0.45,
+      childrenNodeIds: ["node_out_a1", "node_out_a2"],
+    },
+    {
+      id: "node_opt_b",
+      label: "Option B: Value-Tiered +8.5% Repricing (Optimal)",
+      type: "decision_branch",
+      expectedPayoff: 3400000,
+      riskScore: 18,
+      probability: 0.92,
+      childrenNodeIds: ["node_out_b1"],
+    },
+    {
+      id: "node_opt_c",
+      label: "Option C: Grandfather Existing Contracts (Status Quo)",
+      type: "decision_branch",
+      expectedPayoff: 450000,
+      riskScore: 10,
+      probability: 0.98,
+      childrenNodeIds: [],
+    },
+    {
+      id: "node_out_b1",
+      label: "Gross Margin Expansion with Contract Lock-in",
+      type: "outcome",
+      expectedPayoff: 3400000,
+      probability: 0.92,
+      childrenNodeIds: [],
+    },
+  ],
+  edges: [
+    { id: "e1", source: "node_root", target: "node_opt_a", label: "High Elasticity" },
+    { id: "e2", source: "node_root", target: "node_opt_b", label: "Recommended Path" },
+    { id: "e3", source: "node_root", target: "node_opt_c", label: "Conservative" },
+    { id: "e4", source: "node_opt_b", target: "node_out_b1", label: "92% Confidence" },
+  ],
+  optimalPathNodeIds: ["node_root", "node_opt_b", "node_out_b1"],
+  calculatedExpectedValue: 3400000,
+  confidenceInterval: {
+    min: 3100000,
+    max: 3750000,
+  },
+  createdAt: "2026-09-29T08:00:00Z",
+  updatedAt: "2026-09-29T09:30:00Z",
+};

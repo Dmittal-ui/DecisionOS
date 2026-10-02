@@ -1,0 +1,35 @@
+# DecisionOS Backend — Python Dependencies
+# Phase 1: Foundation
+#
+# Install with:
+#   pip install --only-binary :all: -r requirements.txt
+#
+# Note: Use Python 3.11-3.13 for source builds.
+# Python 3.14+ requires --only-binary :all: (pre-built wheels only).
+
+# Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# File & Data processing
+openpyxl
+pandas
+numpy
+
+# MongoDB async driver
+motor
+pymongo
+
+# Config + environment
+pydantic
+pydantic-settings
+python-dotenv
+
+# HTTP client (used in tests)
+httpx
+
+# Testing
+pytest
+pytest-asyncio
+mongomock-motor

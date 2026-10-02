@@ -1,0 +1,56 @@
+import { Decision } from "@/types/decision";
+
+export const MOCK_DECISIONS: Decision[] = [
+  {
+    id: "dec_1",
+    code: "DEC-2026-0042",
+    title: "Enact Tier-2 Mid-Market Dynamic Price Indexation",
+    executiveSummary: "Authorize automated 8.5% price indexation across Tier-2 SaaS customers with contract anniversary within 60 days.",
+    rationale: "Comprehensive econometric modeling demonstrates 92% confidence of capturing $3.4M incremental recurring margin with sub-0.3% churn impact.",
+    impactLevel: "enterprise",
+    status: "approved",
+    opportunityId: "opp_1",
+    estimatedValue: 3400000,
+    confidenceScore: 92,
+    ownerId: "usr_99182a",
+    ownerName: "Alexandra Chen",
+    approvals: [
+      { userId: "usr_99182a", userName: "Alexandra Chen", role: "CSOO", status: "approved", timestamp: "2026-09-29T09:30:00Z", notes: "Approved based on Monte Carlo scenario run #5501." },
+      { userId: "usr_cfo_01", userName: "David Thorne", role: "CFO", status: "approved", timestamp: "2026-09-29T10:15:00Z", notes: "Verified gross margin alignment." },
+      { userId: "usr_legal_02", userName: "Elena Rostova", role: "General Counsel", status: "approved", timestamp: "2026-09-29T10:45:00Z" },
+    ],
+    executionDeadline: "2026-10-05T00:00:00Z",
+    auditTrail: [
+      { id: "aud_1", action: "Decision Proposed", performedBy: "Alexandra Chen", timestamp: "2026-09-29T08:00:00Z", notes: "Generated from Opportunity OPP-9021." },
+      { id: "aud_2", action: "Multi-factor Simulation Attached", performedBy: "System", timestamp: "2026-09-29T08:15:00Z" },
+      { id: "aud_3", action: "Final Executive Authorization Granted", performedBy: "David Thorne", timestamp: "2026-09-29T10:45:00Z", previousState: "pending_approval", newState: "approved" },
+    ],
+    dnaSignatureId: "dna_sig_77",
+    createdAt: "2026-09-29T08:00:00Z",
+    updatedAt: "2026-09-29T10:45:00Z",
+  },
+  {
+    id: "dec_2",
+    code: "DEC-2026-0043",
+    title: "Emergency Dedicated Cache Provisioning for Healthcare API Gateway",
+    executiveSummary: "Immediate provisioning of 16 distributed ElastiCache clusters to eliminate P99 SLA degradation for hospital intake clients.",
+    rationale: "Directly resolves $1.97M churn risk identified in Investigation INV-4019.",
+    impactLevel: "operational",
+    status: "executing",
+    opportunityId: "opp_2",
+    estimatedValue: 1970000,
+    confidenceScore: 96,
+    ownerId: "usr_48211b",
+    ownerName: "Marcus Vance",
+    approvals: [
+      { userId: "usr_48211b", userName: "Marcus Vance", role: "VP Engineering", status: "approved", timestamp: "2026-09-29T09:00:00Z" },
+    ],
+    executionDeadline: "2026-09-30T00:00:00Z",
+    auditTrail: [
+      { id: "aud_10", action: "Automated Incident Escalation", performedBy: "Decision Engine", timestamp: "2026-09-29T08:30:00Z" },
+      { id: "aud_11", action: "Execution Pipeline Triggered", performedBy: "Marcus Vance", timestamp: "2026-09-29T09:00:00Z", previousState: "approved", newState: "executing" },
+    ],
+    createdAt: "2026-09-29T08:30:00Z",
+    updatedAt: "2026-09-29T09:00:00Z",
+  },
+];

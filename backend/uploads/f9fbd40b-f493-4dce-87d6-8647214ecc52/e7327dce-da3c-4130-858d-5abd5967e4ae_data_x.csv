@@ -1,0 +1,3 @@
+order_id,date,channel,revenue,cogs,marketing_spend,inventory_units,unit_price,quantity
+ORD-001,2026-09-01,Direct,10000,6000,1000,500,100,100
+ORD-002,2026-09-02,Direct,20000,12000,2000,450,100,200
